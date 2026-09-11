@@ -5,3 +5,10 @@
     --color-shade: #133A1B;
     --color-light: #FFFFFF;
 }
+
+body{
+    background-color:#91AC87;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
