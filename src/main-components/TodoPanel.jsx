@@ -1,17 +1,18 @@
+import { useState } from "react";
 import AddTask from "./AddTask";
 import InputError from "./InputError";
 import TasksList from "./TasksList";
 
 export default function TodoPanel() {
 
+    const [tasks , setTasks] = useState([])
+    console.log(tasks)
     return(
             <section className="right w-full lg:max-w-[60%] h-[520px]  sm:h-[480px] bg-shade px-2 min-[365px]:px-4 sm:px-7 py-8 rounded-xl">
-
                 <h1 className="text-2xl text-center text-light font-bold">Get Things Done !</h1>
-                <AddTask/>
+                <AddTask setTasks={setTasks} tasks={tasks}/>
                 <InputError text='Please enter content !'/>
-                <TasksList/>
-
+                <TasksList tasks={tasks}/>
             </section>
     )
 }
