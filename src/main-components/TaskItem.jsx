@@ -1,6 +1,8 @@
 
 export default function TaskItem ({task}) {
     return (
-        <input type="text" class='bg-red-500' value={task} />
+
+        <p className='bg-red-500' >{task}</p>
+
     )
 }

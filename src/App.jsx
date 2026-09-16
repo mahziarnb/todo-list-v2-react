@@ -7,6 +7,7 @@ function App() {
     <div>
 
       <WarningDialog text='are you sure you want delete your task ?'/>
+      
       <Main />
 
     </div>
