@@ -12,3 +12,85 @@ body{
     justify-content: center;
     align-items: center;
 }
+
+body{
+    font-family: "Roboto Condensed", sans-serif;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    cursor: pointer;
+    color: white;
+    transition: color .15s ease ;
+}
+
+.tasks-item{
+    display: flex;
+    background-color: #91AC87;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.item-text{
+    flex-grow: 1;
+    padding: 10px 5px 10px 20px;
+    color: white;
+}
+
+.item-text:focus{
+    background-color: #133a1b91;
+    color: white;
+    outline: none;
+}
+
+
+.btn-group{
+    display: flex;
+    gap: 0 3px;
+    padding-right: 8px;
+}
+
+.addBtn{
+    transition:color .15s ease , background-color .15s ease ;
+    cursor: pointer;
+    color: white;
+}
+
+.addBtn:hover {
+    background-color: #FFFFFF;
+    color: #133a1b91 ;
+}
+
+.cancelBtn:hover ,
+.removeBtn:hover {
+    color: #b9854e;
+}
+
+.confirmBtn:hover ,
+.editBtn:hover{
+    color: #133a1b91;
+}
+
+/* animation */
+
+.owl {
+    animation: owlFloat 3s ease-in-out infinite;
+}
+
+@keyframes owlFloat {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
