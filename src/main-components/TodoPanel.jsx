@@ -17,7 +17,7 @@ export default function TodoPanel() {
 
                 <InputError text='Please enter content !'/>
 
-                <TasksList tasks={tasks}/>
+                <TasksList tasks={tasks} setTasks={setTasks} />
 
             </section>
     )
