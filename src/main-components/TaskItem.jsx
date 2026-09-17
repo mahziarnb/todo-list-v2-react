@@ -12,7 +12,7 @@ export default function TaskItem ({task , id , tasks , setTasks}) {
 
                 <EditBtn id={id}  tasks={tasks} setTasks={setTasks} />
 
-                <RemoveBtn />
+                <RemoveBtn id={id}  tasks={tasks} setTasks={setTasks} />
 
             </div>
 
