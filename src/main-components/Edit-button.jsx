@@ -18,7 +18,7 @@ export default function EditBtn({id , tasks , setTasks}) {
 
 
     return(
-            <button id={id} onClick={() => editHandler(id)} className="editBtn btn order-3">
+            <button id={id} onClick={() => editHandler(id)} className="editBtn btn">
                 <i className="fa-solid fa-pen-to-square"></i>
             </button>
     )

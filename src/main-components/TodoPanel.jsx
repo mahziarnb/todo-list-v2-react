@@ -3,7 +3,7 @@ import AddTask from "./AddTask";
 import InputError from "./InputError";
 import TasksList from "./TasksList";
 
-export default function TodoPanel() {
+export default function TodoPanel({removeModal}) {
 
     const [tasks , setTasks] = useState([])
 
@@ -17,7 +17,7 @@ export default function TodoPanel() {
 
                 <InputError text='Please enter content !'/>
 
-                <TasksList tasks={tasks} setTasks={setTasks} />
+                <TasksList tasks={tasks} setTasks={setTasks} removeModal={removeModal} />
 
             </section>
     )

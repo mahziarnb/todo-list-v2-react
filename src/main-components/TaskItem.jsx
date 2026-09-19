@@ -1,7 +1,7 @@
 import EditBtn from "./Edit-button";
 import RemoveBtn from "./RemoveBtn";
 
-export default function TaskItem ({task , id , tasks , setTasks}) {
+export default function TaskItem ({task , id , tasks , setTasks , removeModal}) {
     return (
 
         <li className="tasks-item">
@@ -12,7 +12,7 @@ export default function TaskItem ({task , id , tasks , setTasks}) {
 
                 <EditBtn id={id}  tasks={tasks} setTasks={setTasks} />
 
-                <RemoveBtn id={id}  tasks={tasks} setTasks={setTasks} />
+                <RemoveBtn id={id}  tasks={tasks} setTasks={setTasks} removeModal={removeModal} />
 
             </div>
 
