@@ -10,7 +10,7 @@ export default function TaskItem ({task , id , tasks , setTasks , removeModal}) 
 
         <li className="tasks-item">
 
-            <label className={`item-text ${isChecked && "line-through decoration-3 decoration-tint"}`}>
+            <label className={`item-text ${isChecked && "line-through decoration-1 decoration-shade"}`}>
                 <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked) } className='mr-2' />
                 {task}
             </label>
@@ -24,8 +24,6 @@ export default function TaskItem ({task , id , tasks , setTasks , removeModal}) 
             </div>
 
         </li>
-
-
 
     )
 }
