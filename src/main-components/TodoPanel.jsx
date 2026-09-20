@@ -15,8 +15,6 @@ export default function TodoPanel({removeModal}) {
 
                 <AddTask setTasks={setTasks} tasks={tasks}/>
 
-                {/* <InputError text='Please enter content !'/> */}
-
                 <TasksList tasks={tasks} setTasks={setTasks} removeModal={removeModal} />
 
             </section>
