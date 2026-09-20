@@ -6,8 +6,15 @@
     --color-light: #FFFFFF;
 }
 
+#root{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body{
-    background-color:#91AC87;
+    background-color:#91AC87 !important;
     display: flex;
     justify-content: center;
     align-items: center;
