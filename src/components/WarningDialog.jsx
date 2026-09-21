@@ -1,17 +1,9 @@
 
-export default function WarningDialog({text  , ref , btnId , setTasks , tasks}) {
+export default function WarningDialog({text  , ref , onConfirm}) {
 
 
-    function handleYesClick(btnId){
-
-     setTasks(
-
-            tasks.filter(
-                task => task.id !== btnId
-            )
-
-     )
-
+    function handleYesClick(){
+        onConfirm()
     }
 
     function handleCancelClick() {
@@ -42,7 +34,7 @@ export default function WarningDialog({text  , ref , btnId , setTasks , tasks}) 
                     </div>
                     </div>
                     <div className="bg-shade/75 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                    <button onClick={() => handleYesClick(btnId)} type="button" id="yesModal" command="close" commandfor="dialog" className="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto">Yes</button>
+                    <button onClick={() => handleYesClick()} type="button" id="yesModal" command="close" commandfor="dialog" className="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto">Yes</button>
                     <button onClick={() => handleCancelClick()}  type="button"  className="mt-3 inline-flex w-full justify-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 sm:mt-0 sm:w-auto">Cancel</button>
                     </div>
                 </el-dialog-panel>

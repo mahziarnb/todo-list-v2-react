@@ -28,6 +28,7 @@ export default function TodoPanel({removeModal}) {
 
                 <AddTask setTasks={setTasks} tasks={tasks}/>
 
+
                 <TasksList tasks={tasks} setTasks={setTasks} removeModal={removeModal} />
 
             </section>
