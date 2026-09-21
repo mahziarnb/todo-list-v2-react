@@ -6,7 +6,7 @@ export default function TasksList({tasks , setTasks , removeModal}) {
 
                 {
 
-                    tasks.map(task => <TaskItem key={task.id} tasks={tasks} setTasks={setTasks} task={task.text} id={task.id} removeModal={removeModal} />)
+                    tasks.map(task => <TaskItem key={task.id} isChecked={task.isChecked} tasks={tasks} setTasks={setTasks} task={task.text} id={task.id} removeModal={removeModal} />)
 
                 }
 

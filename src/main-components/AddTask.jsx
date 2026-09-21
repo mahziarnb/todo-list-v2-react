@@ -26,7 +26,7 @@ export default function AddTask({setTasks , tasks}) {
 
         setEmpty(false)
 
-        setTasks([...tasks , {id:Math.random() , text:text}])
+        setTasks([...tasks , {id:Math.random() , text:text , isChecked:false}])
 
         setText('')
 

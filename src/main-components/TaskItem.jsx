@@ -1,17 +1,31 @@
-import { useState } from "react";
 import EditBtn from "./Edit-button";
 import RemoveBtn from "./RemoveBtn";
 
-export default function TaskItem ({task , id , tasks , setTasks , removeModal}) {
 
-    const [isChecked , setIsChecked] = useState(false)
+export default function TaskItem ({task , id , tasks , setTasks , removeModal , isChecked}) {
+
+    function handleIsChecked(isChecked , id) {
+
+        setTasks(tasks =>
+
+            tasks.map(
+
+                task => id === task.id ? {...task , isChecked:isChecked} : task
+
+            )
+
+        )
+
+    }
+
+
 
     return (
 
-        <li className="tasks-item">
+        <li  className="tasks-item">
 
             <label className={`item-text ${isChecked && "line-through decoration-1 decoration-shade"}`}>
-                <input type="checkbox" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked) } className='mr-2' />
+                <input type="checkbox" checked={isChecked} onChange={(e) => handleIsChecked(e.target.checked , id) } className='mr-2' />
                 {task}
             </label>
 

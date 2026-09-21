@@ -8,7 +8,7 @@ export default function EditBtn({id , tasks , setTasks}) {
 
 
 
-    function editHandler(btnId) {
+    function editHandler() {
 
 
        editModalRef.current.showModal()
