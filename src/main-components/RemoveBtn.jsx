@@ -8,14 +8,13 @@ export default function RemoveBtn({id , tasks , setTasks}) {
     function removeHandler(btnId) {
 
         removeModal.current.showModal()
-
         setBtnId(btnId)
     }
 
     return(
         <div>
 
-            <WarningDialog btnId={btnId} setTasks={setTasks} tasks={tasks} ref={removeModal} text={'are you sure you want to delete your task ?'}/>
+            <WarningDialog  btnId={btnId} setTasks={setTasks} tasks={tasks} ref={removeModal} text={'are you sure you want to delete your task ?'}/>
 
             <button id={id} onClick={() => removeHandler(id)} className="removeBtn btn order-1">
                 <i className="fa-solid fa-trash"></i>

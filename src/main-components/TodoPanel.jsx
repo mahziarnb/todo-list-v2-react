@@ -1,11 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AddTask from "./AddTask";
-import InputError from "./InputError";
 import TasksList from "./TasksList";
 
 export default function TodoPanel({removeModal}) {
 
     const [tasks , setTasks] = useState([])
+
+    useEffect(() => {
+
+        const savedTasks = localStorage.getItem('tasks')
+
+        if(savedTasks){
+            setTasks(JSON.parse(savedTasks))
+        }
+
+    } , [])
+
+    useEffect(() => {
+        localStorage.setItem('tasks' , JSON.stringify(tasks))
+    },[tasks])
 
     return(
 

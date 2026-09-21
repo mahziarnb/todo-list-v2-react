@@ -5,9 +5,11 @@ export default function WarningDialog({text  , ref , btnId , setTasks , tasks}) 
     function handleYesClick(btnId){
 
      setTasks(
+
             tasks.filter(
                 task => task.id !== btnId
             )
+
      )
 
     }
@@ -19,7 +21,7 @@ export default function WarningDialog({text  , ref , btnId , setTasks , tasks}) 
     return(
 
         <el-dialog>
-            <dialog ref={ref} id="dialog"  aria-labelledby="dialog-title" className="fixed inset-0  size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
+            <dialog ref={ref}  id="dialog"  aria-labelledby="dialog-title" className="fixed inset-0  size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:bg-transparent">
                 <el-dialog-backdrop className="fixed inset-0 bg-gray-900/50 transition-opacity data-closed:opacity-0 data-enter:duration-300 data-enter:ease-out data-leave:duration-200 data-leave:ease-in"></el-dialog-backdrop>
 
                 <div tabIndex="0" className="flex min-h-full items-center justify-center p-4 text-center focus:outline-none sm:items-center sm:p-0">
@@ -40,7 +42,7 @@ export default function WarningDialog({text  , ref , btnId , setTasks , tasks}) 
                     </div>
                     </div>
                     <div className="bg-shade/75 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                    <button onClick={() => handleYesClick(btnId)}  type="button" id="yesModal" command="close" commandfor="dialog" className="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto">Yes</button>
+                    <button onClick={() => handleYesClick(btnId)} type="button" id="yesModal" command="close" commandfor="dialog" className="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto">Yes</button>
                     <button onClick={() => handleCancelClick()}  type="button"  className="mt-3 inline-flex w-full justify-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 sm:mt-0 sm:w-auto">Cancel</button>
                     </div>
                 </el-dialog-panel>

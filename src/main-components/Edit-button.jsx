@@ -14,14 +14,6 @@ export default function EditBtn({id , tasks , setTasks}) {
        editModalRef.current.showModal()
        focusTextArea.current.focus()
 
-        // if(newText === null || newText.trim() === '') {
-        //     return
-        // }
-
-        // setTasks(tasks.map(task => {
-        //     return task.id === btnId ? {...task , text:newText} : task
-        // }))
-
     }
 
 
