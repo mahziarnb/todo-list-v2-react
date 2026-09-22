@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import AddTask from "./AddTask";
 import TasksList from "./TasksList";
-import Btn from "./Btn";
 import WarningDialog from "../components/WarningDialog";
+import RemoveAllButton from "./RemoveAllButton";
 
 export default function TodoPanel({removeModal}) {
 
@@ -47,7 +47,7 @@ export default function TodoPanel({removeModal}) {
 
                 <WarningDialog ref={dialog} text={'Are you sure you want to delete all tasks?'} onConfirm={removeAllTasks} />
 
-                <Btn clickHandler={removeAllTasksWarning} text='Remove All' />
+                <RemoveAllButton clickHandler={removeAllTasksWarning} text='Remove All' />
 
                 <TasksList tasks={tasks} setTasks={setTasks} removeModal={removeModal} />
 

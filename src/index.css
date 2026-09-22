@@ -61,7 +61,7 @@ body{
     padding-right: 8px;
 }
 
-.addBtn{
+.addBtn , .removeAllButton{
     transition:color .15s ease , background-color .15s ease ;
     cursor: pointer;
     color: white;
@@ -71,6 +71,12 @@ body{
     background-color: #FFFFFF;
     color: #133a1b91 ;
 }
+
+.removeAllButton:hover{
+    background-color: white;
+    color: red;
+}
+
 
 .cancelBtn:hover ,
 .removeBtn:hover {
