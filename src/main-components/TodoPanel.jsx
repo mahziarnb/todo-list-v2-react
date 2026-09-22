@@ -39,7 +39,7 @@ export default function TodoPanel({removeModal}) {
 
     return(
 
-            <section className="w-full lg:max-w-[60%] bg-shade px-2 min-[365px]:px-4 sm:px-7 py-8 rounded-xl">
+            <section className="w-full lg:max-w-[60%] min-h-[565px] sm:min-h-[530px] bg-shade px-2 min-[365px]:px-4 sm:px-7 py-8 rounded-xl">
 
                 <h1 className="text-2xl text-center text-light font-bold">Get Things Done !</h1>
 
