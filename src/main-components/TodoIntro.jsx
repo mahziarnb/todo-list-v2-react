@@ -6,7 +6,7 @@ export default function TodoIntro () {
 
                 <h1 className="font-black text-5xl min-[335px]:text-6xl text-shade tracking-wide text-center">ToDo List</h1>
 
-                <p className="text-lg min-[320px]:text-xl min-[335px]:text-2xl text-light py-5 text-center ">Lets Accomplish Tasks Together!</p>
+                <p className="text-lg min-[320px]:text-xl min-[335px]:text-2xl text-light py-7 text-center ">Lets Accomplish Tasks Together!</p>
 
                 <div className="image w-full">
                     <div className="size-[23rem]">
