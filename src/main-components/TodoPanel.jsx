@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef} from "react";
 import AddTask from "./AddTask";
 import TasksList from "./TasksList";
 import WarningDialog from "../components/WarningDialog";
 import RemoveAllButton from "./RemoveAllButton";
 
-export default function TodoPanel({removeModal}) {
+export default function TodoPanel({removeModal , tasks , setTasks}) {
 
-    const [tasks , setTasks] = useState([])
     const dialog = useRef(null)
 
     useEffect(() => {

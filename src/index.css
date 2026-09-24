@@ -108,3 +108,44 @@ body{
         transform: translateY(0);
     }
 }
+
+/* test */
+.container{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(30, 45, 40, 0.14);
+}
+
+.container svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.outer ,
+.inner{
+    fill: none;
+    stroke-width: 4;
+}
+
+.outer{
+    stroke:#aec9a5cb ;
+}
+/* .inner{
+    stroke: #133A1B;
+    stroke-dasharray: 439.6;
+    stroke-dashoffset: 60;
+} */
+
+.num{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #133A1B;
+    font-size: 45px;
+}
