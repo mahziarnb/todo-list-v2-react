@@ -1,26 +1,19 @@
 
-export default function Progress({progressPercent , hiddenPercent}) {
+export default function Progress({ progressPercent, hiddenPercent }) {
 
-    return(
-        <div className="container">
+    return (
+        <div className="container relative progress w-[200px] h-[200px] relative rounded-full shadow-[0_2px_10px_rgba(30,45,40,0.14)]">
 
-            <svg viewBox="0 0 150 150">
+            <svg className="w-full h-full rotate-[-90deg]" viewBox="0 0 150 150">
 
-                <circle className="outer" cx="75" cy="75" r="70"></circle>
+                <circle className="outer stroke-[#aec9a5cb] fill-none stroke-4" cx="75" cy="75" r="70" />
 
-                <circle id="inner" className="inner" style={{stroke: '#133A1B',
-                    'stroke-dasharray': 439.6,
-                    'stroke-dashoffset': hiddenPercent
-                    }}
-                    cx="75" cy="75" r="70">
-                </circle>
+                <circle className="inner fill-none stroke-4 stroke-shade" style={{strokeDasharray: 439.6, strokeDashoffset: hiddenPercent }} cx="75" cy="75" r="70" />
 
             </svg>
 
-            <div id="num" className="num">
-                {progressPercent}
-            </div>
+            <div className="num absolute inset-0 flex justify-center items-center font-[700] text-shade text-[45px] "> {progressPercent}</div>
 
         </div>
     )
-}
+    }
