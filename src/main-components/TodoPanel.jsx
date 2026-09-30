@@ -27,9 +27,11 @@ export default function TodoPanel({removeModal}) {
     },[todo.tasks])
 
     function removeAllTasksWarning() {
+
         if(todo.tasks.length === 0) {
             return
         }
+        
         dialog.current.showModal()
     }
 
