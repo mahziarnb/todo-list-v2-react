@@ -3,8 +3,12 @@ import AddTask from "./AddTask";
 import TasksList from "./TasksList";
 import WarningDialog from "../components/WarningDialog";
 import RemoveAllButton from "./RemoveAllButton";
+import { useContext } from "react";
+import { TodoContext } from "../components/TodoContext";
 
-export default function TodoPanel({removeModal , tasks , setTasks}) {
+export default function TodoPanel({removeModal}) {
+
+    const todo = useContext(TodoContext)
 
     const dialog = useRef(null)
 
@@ -13,25 +17,27 @@ export default function TodoPanel({removeModal , tasks , setTasks}) {
         const savedTasks = localStorage.getItem('tasks')
 
         if(savedTasks){
-            setTasks(JSON.parse(savedTasks))
+            todo.setTasks(JSON.parse(savedTasks))
         }
 
     } , [])
 
     useEffect(() => {
-        localStorage.setItem('tasks' , JSON.stringify(tasks))
-    },[tasks])
+        localStorage.setItem('tasks' , JSON.stringify(todo.tasks))
+    },[todo.tasks])
 
     function removeAllTasksWarning() {
-        if(tasks.length === 0) {
+        if(todo.tasks.length === 0) {
             return
         }
         dialog.current.showModal()
     }
 
     function removeAllTasks() {
+
         dialog.current.close()
-        setTasks([])
+
+        todo.setTasks([])
 
     }
 
@@ -42,13 +48,13 @@ export default function TodoPanel({removeModal , tasks , setTasks}) {
 
                 <h1 className="text-2xl text-center text-light font-bold">Get Things Done !</h1>
 
-                <AddTask setTasks={setTasks} tasks={tasks}/>
+                <AddTask setTasks={todo.setTasks} tasks={todo.tasks}/>
 
                 <WarningDialog ref={dialog} text={'Are you sure you want to delete all tasks?'} onConfirm={removeAllTasks} />
 
                 <RemoveAllButton clickHandler={removeAllTasksWarning} text='Remove All' />
 
-                <TasksList tasks={tasks} setTasks={setTasks} removeModal={removeModal} />
+                <TasksList tasks={todo.tasks} setTasks={todo.setTasks} removeModal={removeModal} />
 
             </section>
     )

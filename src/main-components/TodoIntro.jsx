@@ -1,15 +1,22 @@
 import { useState } from "react"
 import Owl from "../assets/images/Owl.png"
 import Progress from "./Progress"
-export default function TodoIntro({ tasks }) { const passedTasks = tasks.filter(task => task.isChecked === true )
+import { useContext } from "react"
+import { TodoContext } from "../components/TodoContext"
 
-const totalTasks = tasks.length === 0 ? 1 : tasks.length
+export default function TodoIntro() {
+    
+    const todo = useContext(TodoContext)
 
-const passedTasksPercent = `${Math.floor( (passedTasks.length / totalTasks) * 100 )}%`
+    const passedTasks = todo.tasks.filter(task => task.isChecked === true )
 
-const hiddenPercent = 439.6 - (passedTasks.length / totalTasks) * 439.6
+    const totalTasks = todo.tasks.length === 0 ? 1 : todo.tasks.length
 
-const [showProgress, setShowProgress] = useState(false)
+    const passedTasksPercent = `${Math.floor( (passedTasks.length / totalTasks) * 100 )}%`
+
+    const hiddenPercent = 439.6 - (passedTasks.length / totalTasks) * 439.6
+
+    const [showProgress, setShowProgress] = useState(false)
 
     return (
         <section className="flex justify-center flex-col pb-7">
