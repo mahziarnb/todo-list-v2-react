@@ -56,7 +56,7 @@ export default function TodoPanel({removeModal}) {
 
                 <RemoveAllButton clickHandler={removeAllTasksWarning} text='Remove All' />
 
-                <TasksList tasks={todo.tasks} setTasks={todo.setTasks} removeModal={removeModal} />
+                <TasksList removeModal={removeModal} />
 
             </section>
     )

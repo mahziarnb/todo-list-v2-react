@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import EditBtn from "./Edit-button";
 import RemoveBtn from "./RemoveBtn";
+import { TodoContext } from "../components/TodoContext";
 
 
-export default function TaskItem ({task , id , tasks , setTasks , removeModal , isChecked}) {
+export default function TaskItem ({task , id , removeModal , isChecked}) {
+
+    const todo = useContext(TodoContext)
 
     function handleIsChecked(isChecked , id) {
 
-        setTasks(tasks =>
+        todo.setTasks(tasks =>
 
             tasks.map(
 
@@ -31,9 +35,9 @@ export default function TaskItem ({task , id , tasks , setTasks , removeModal , 
 
             <div className="btn-group">
 
-                <EditBtn id={id}  tasks={tasks} setTasks={setTasks} />
+                <EditBtn id={id} />
 
-                <RemoveBtn id={id}  tasks={tasks} setTasks={setTasks} removeModal={removeModal} />
+                <RemoveBtn id={id} removeModal={removeModal} />
 
             </div>
 

@@ -1,11 +1,15 @@
-import {useState } from "react";
+import {useContext, useState } from "react";
+import { TodoContext } from "../components/TodoContext";
 
-export default function GetNewText({areaRef , ref , id , tasks , setTasks}) {
+export default function GetNewText({areaRef , ref , id}) {
 
-    const [currText , newText] = useState(tasks.filter(task => task.id === id)[0].text)
+    const todo = useContext(TodoContext)
+
+    const [currText , newText] = useState(todo.tasks.filter(task => task.id === id)[0].text)
+    
     function yesBtnHandler(btnId) {
 
-          setTasks(tasks.map(task => {
+          todo.setTasks(todo.tasks.map(task => {
               return task.id === btnId ? {...task , text:currText} : task
         }))
 
@@ -28,16 +32,16 @@ export default function GetNewText({areaRef , ref , id , tasks , setTasks}) {
                     <div className="sm:flex sm:items-start">
 
                         <div className="mt-3 w-full text-center sm:mt-0 sm:ml-4 sm:text-left">
-                        <h3 id="dialog-title" className="text-base font-semibold text-white">please enter your changes :</h3>
-                        <div className="mt-2">
-                            <textarea ref={areaRef} onChange={(e) => newText(e.target.value)} className="w-full text-white resize-none rounded-2xl outline-none focus:border-2 focus:border-tint  p-2" rows={2} defaultValue={currText}></textarea>
-                        </div>
+                            <h3 id="dialog-title" className="text-base font-semibold text-white">please enter your changes :</h3>
+                            <div className="mt-2">
+                                <textarea ref={areaRef} onChange={(e) => newText(e.target.value)} className="w-full text-white resize-none rounded-2xl outline-none focus:border-2 focus:border-tint  p-2" rows={2} defaultValue={currText}></textarea>
+                            </div>
                         </div>
                     </div>
                     </div>
                     <div className="bg-shade/75 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                    <button onClick={() => yesBtnHandler(id)}  type="button" id="yesModal"  className="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto">Yes</button>
-                    <button onClick={() => cancelBtnHandler()}  type="button"  className="mt-3 inline-flex w-full justify-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 sm:mt-0 sm:w-auto">Cancel</button>
+                        <button onClick={() => yesBtnHandler(id)}  type="button" id="yesModal"  className="inline-flex w-full justify-center rounded-md bg-red-500 px-3 py-2 text-sm font-semibold text-white hover:bg-red-400 sm:ml-3 sm:w-auto">Yes</button>
+                        <button onClick={() => cancelBtnHandler()}  type="button"  className="mt-3 inline-flex w-full justify-center rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20 sm:mt-0 sm:w-auto">Cancel</button>
                     </div>
                 </el-dialog-panel>
                 </div>
