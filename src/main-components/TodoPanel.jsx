@@ -31,7 +31,7 @@ export default function TodoPanel({removeModal}) {
         if(todo.tasks.length === 0) {
             return
         }
-        
+
         dialog.current.showModal()
     }
 
@@ -50,7 +50,7 @@ export default function TodoPanel({removeModal}) {
 
                 <h1 className="text-2xl text-center text-light font-bold">Get Things Done !</h1>
 
-                <AddTask setTasks={todo.setTasks} tasks={todo.tasks}/>
+                <AddTask/>
 
                 <WarningDialog ref={dialog} text={'Are you sure you want to delete all tasks?'} onConfirm={removeAllTasks} />
 
